@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ComputationsService {
-    public int add(int x, int y) throws InterruptedException {
-        Thread.sleep(5000);
+    int add(int x, int y) throws InterruptedException {
+        Thread.sleep(1000);
         return IntMath.checkedAdd(x, y);
     }
 }
