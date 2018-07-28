@@ -1,6 +1,6 @@
 package com.example.emailservice;
 
-import com.example.emailservice.rest.controller.EmailController;
+import com.example.emailservice.rest.controller.email.EmailController;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

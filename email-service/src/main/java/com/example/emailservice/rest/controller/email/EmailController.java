@@ -1,4 +1,4 @@
-package com.example.emailservice.rest.controller;
+package com.example.emailservice.rest.controller.email;
 
 import com.example.emailservice.domain.email.service.EmailService;
 import lombok.AccessLevel;
