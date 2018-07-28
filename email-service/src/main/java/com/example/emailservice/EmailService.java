@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CompletableFuture;
 
+import static java.util.Objects.nonNull;
+
 /**
  * Created by mtumilowicz on 2018-07-28.
  */
@@ -23,7 +25,10 @@ public class EmailService {
     @Async
     public CompletableFuture<String> asyncSend(Integer id, String message) {
         log.info("Sending " + message + " to: " + id);
-        return CompletableFuture.completedFuture(sender.send(userService.getUserById(id), message));
+        return CompletableFuture.supplyAsync(() -> sender.send(userService.getUserById(id), message))
+                .handle((s, t)-> nonNull(s) ? 
+                        s : 
+                        "FAIL: Sending message " + message + " to " + id + " reason:" + t.getLocalizedMessage());
     }
     
     String send(Integer id, String message) {

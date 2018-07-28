@@ -26,7 +26,7 @@ public class EmailController {
 
     @GetMapping("send/async/{message}")
     public ResponseEntity<List<String>> asyncSend(@PathVariable("message") String message) {
-        List<Integer> ids = Arrays.asList(1, 2, 3, 4);
+        List<Integer> ids = Arrays.asList(1, 2, 3, 4, 5); // user with 5 does not exist
         
         List<CompletableFuture<String>> completableFutures = ids
                 .stream()
