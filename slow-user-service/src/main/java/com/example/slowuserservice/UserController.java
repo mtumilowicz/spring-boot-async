@@ -20,9 +20,9 @@ public class UserController {
 
     UserService service;
     
-    @GetMapping("{id}")
-    public ResponseEntity<User> getById(@PathVariable("id") Integer id) {
-        return ResponseEntity.ok(service.getById(id));
+    @GetMapping("{login}")
+    public ResponseEntity<User> getById(@PathVariable("login") String login) {
+        return ResponseEntity.ok(service.getById(login));
     }
 
     @GetMapping("health")

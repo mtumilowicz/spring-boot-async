@@ -23,16 +23,16 @@ public class EmailService {
     UserService userService;
 
     @Async
-    public CompletableFuture<String> asyncSend(Integer id, String message) {
-        log.info("Sending " + message + " to: " + id);
-        return CompletableFuture.supplyAsync(() -> sender.send(userService.getUserById(id), message))
+    public CompletableFuture<String> asyncSend(String login, String message) {
+        log.info("Sending " + message + " to: " + login);
+        return CompletableFuture.supplyAsync(() -> sender.send(userService.getUserById(login), message))
                 .handle((s, t)-> nonNull(s) ? 
                         s : 
-                        "FAIL: Sending message " + message + " to " + id + " reason:" + t.getLocalizedMessage());
+                        "FAIL: Sending message " + message + " to " + login + " reason:" + t.getLocalizedMessage());
     }
     
-    String send(Integer id, String message) {
-        log.info("Sending " + message + " to: " + id);
-        return sender.send(userService.getUserById(id), message);
+    String send(String login, String message) {
+        log.info("Sending " + message + " to: " + login);
+        return sender.send(userService.getUserById(login), message);
     }
 }

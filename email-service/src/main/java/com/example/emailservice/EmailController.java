@@ -26,7 +26,12 @@ public class EmailController {
 
     @GetMapping("send/async/{message}")
     public ResponseEntity<List<String>> asyncSend(@PathVariable("message") String message) {
-        List<Integer> ids = Arrays.asList(1, 2, 3, 4, 5); // user with 5 does not exist
+        List<String> ids = Arrays.asList(
+                "mtumilowicz",
+                "hank",
+                "fjodor",
+                "ernie", 
+                "non-exsiting-user");
         
         List<CompletableFuture<String>> completableFutures = ids
                 .stream()
@@ -43,7 +48,11 @@ public class EmailController {
 
     @GetMapping("send/{message}")
     public ResponseEntity<List<String>> send(@PathVariable("message") String message) {
-        List<Integer> ids = Arrays.asList(1, 2, 3, 4);
+        List<String> ids = Arrays.asList(
+                "mtumilowicz",
+                "hank",
+                "fjodor",
+                "ernie");
         
         return ResponseEntity.ok(ids
                 .stream()

@@ -11,7 +11,6 @@ import lombok.Value;
 @Builder
 @JsonIgnoreProperties(ignoreUnknown=true)
 class User {
-    Integer id;
     String login;
     String email;
 }

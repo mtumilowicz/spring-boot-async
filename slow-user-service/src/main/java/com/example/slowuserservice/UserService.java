@@ -15,7 +15,7 @@ public class UserService {
     
     UserRepository repository;
     
-    User getById(Integer id) {
+    User getById(String id) {
         return repository.getById(id).orElseThrow(() -> new UserNotFoundException(id));
     }
 }

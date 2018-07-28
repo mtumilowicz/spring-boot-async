@@ -16,7 +16,7 @@ public class UserService {
     
     RestTemplate restTemplate;
     
-    User getUserById(Integer id) {
+    User getUserById(String id) {
         String url = String.format("http://localhost:8090/users/%s", id);
         return restTemplate.getForObject(url, User.class);
     }

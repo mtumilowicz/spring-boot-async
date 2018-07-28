@@ -14,7 +14,7 @@ public class UserRepository {
     @Value("${user.repository.delay.seconds}")
     private Integer delay;
     
-    Optional<User> getById(Integer id) {
+    Optional<User> getById(String id) {
         ThreadUtils.sleep(delay);
         return Optional.ofNullable(UsersDatabaseMock.users.get(id));
     }
