@@ -33,6 +33,10 @@ public class EmailService {
     
     String send(String login, String message) {
         log.info("Sending " + message + " to: " + login);
-        return sender.send(userService.getUserById(login), message);
+        try {
+            return sender.send(userService.getUserById(login), message);
+        } catch (Exception e) {
+            return "FAIL: Sending message " + message + " to " + login + " reason:" + e.getLocalizedMessage();
+        }
     }
 }

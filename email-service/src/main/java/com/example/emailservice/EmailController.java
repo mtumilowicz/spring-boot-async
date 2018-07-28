@@ -52,7 +52,8 @@ public class EmailController {
                 "mtumilowicz",
                 "hank",
                 "fjodor",
-                "ernie");
+                "ernie",
+                "non-existing-user");
         
         return ResponseEntity.ok(ids
                 .stream()

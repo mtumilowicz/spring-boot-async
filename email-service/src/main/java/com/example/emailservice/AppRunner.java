@@ -20,13 +20,9 @@ public class AppRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        // Start the clock
         long start = System.currentTimeMillis();
-
         ResponseEntity<List<String>> test = emailController.asyncSend("test");
-
-        // Print results, including elapsed time
-        log.info("Elapsed time: " + (System.currentTimeMillis() - start));
+        log.info("Async Elapsed time: " + (System.currentTimeMillis() - start));
         log.info("--> " + test.toString());
 
         start = System.currentTimeMillis();
@@ -34,7 +30,7 @@ public class AppRunner implements CommandLineRunner {
         ResponseEntity<List<String>> test2 = emailController.send("test");
 
         // Print results, including elapsed time
-        log.info("Elapsed time: " + (System.currentTimeMillis() - start));
+        log.info("Not-async Elapsed time: " + (System.currentTimeMillis() - start));
         log.info("--> " + test2.toString());
 
     }
