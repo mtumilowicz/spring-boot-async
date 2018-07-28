@@ -16,6 +16,6 @@ public class UserRepository {
     
     Optional<User> getById(Integer id) {
         ThreadUtils.sleep(delay);
-        return Optional.ofNullable(UsersMock.users.get(id));
+        return Optional.ofNullable(UsersDatabaseMock.users.get(id));
     }
 }

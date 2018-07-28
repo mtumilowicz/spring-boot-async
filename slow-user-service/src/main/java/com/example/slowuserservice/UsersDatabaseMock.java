@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableMap;
 /**
  * Created by mtumilowicz on 2018-07-28.
  */
-class UsersMock {
+class UsersDatabaseMock {
     static final ImmutableMap<Integer, User> users = ImmutableMap.of(
             1,
             User.builder()
