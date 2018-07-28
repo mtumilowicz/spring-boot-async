@@ -31,7 +31,7 @@ public class EmailController {
                 "hank",
                 "fjodor",
                 "ernie", 
-                "non-exsiting-user");
+                "non-existing-user");
         
         List<CompletableFuture<String>> completableFutures = ids
                 .stream()
