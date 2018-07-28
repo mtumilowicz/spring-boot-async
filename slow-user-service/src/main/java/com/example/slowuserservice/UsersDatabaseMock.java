@@ -13,6 +13,7 @@ class UsersDatabaseMock {
                     .firstName("Michal")
                     .lastName("Tumilowicz")
                     .login("mtumilowicz")
+                    .email("mtumilowicz@gmail.com")
                     .build(),
             2,
             User.builder()
@@ -20,6 +21,7 @@ class UsersDatabaseMock {
                     .firstName("Charles")
                     .lastName("Bukowski")
                     .login("hank")
+                    .email("hank@gmail.com")
                     .build(),
             3,
             User.builder()
@@ -27,6 +29,7 @@ class UsersDatabaseMock {
                     .firstName("Fyodor")
                     .lastName("Dostoevsky")
                     .login("fjodor")
+                    .email("fjodor@gmail.com")
                     .build(),
             4,
             User.builder()
@@ -34,6 +37,7 @@ class UsersDatabaseMock {
                     .firstName("Ernest")
                     .lastName("Hemingway")
                     .login("ernie")
+                    .email("ErnestHemingway@gmail.com")
                     .build()
     );
 }
