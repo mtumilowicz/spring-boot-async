@@ -1,5 +1,6 @@
-package com.example.emailservice;
+package com.example.emailservice.rest.controller;
 
+import com.example.emailservice.domain.email.service.EmailService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;

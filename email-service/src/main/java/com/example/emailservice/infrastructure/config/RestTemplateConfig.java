@@ -1,4 +1,4 @@
-package com.example.emailservice;
+package com.example.emailservice.infrastructure.config;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
  * Created by mtumilowicz on 2018-07-26.
  */
 @Configuration
-public class RestTemplateConfig {
+class RestTemplateConfig {
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder.build();

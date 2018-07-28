@@ -1,4 +1,4 @@
-package com.example.emailservice;
+package com.example.emailservice.domain.user.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import lombok.Value;
 @Value
 @Builder
 @JsonIgnoreProperties(ignoreUnknown=true)
-class User {
+public class User {
     String login;
     String email;
 }

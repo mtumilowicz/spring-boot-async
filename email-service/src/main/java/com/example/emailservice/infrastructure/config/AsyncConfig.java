@@ -1,4 +1,4 @@
-package com.example.emailservice;
+package com.example.emailservice.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,10 +12,10 @@ import java.util.concurrent.Executor;
  */
 @Configuration
 @EnableAsync
-public class AsyncConfiguration {
+class AsyncConfig {
 
     @Bean
-    public Executor asyncExecutor() {
+    Executor asyncExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(4);
         executor.setMaxPoolSize(4);
@@ -24,5 +24,5 @@ public class AsyncConfiguration {
         executor.initialize();
         return executor;
     }
-    
+
 }

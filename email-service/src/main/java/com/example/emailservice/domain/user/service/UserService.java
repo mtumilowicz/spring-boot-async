@@ -1,5 +1,6 @@
-package com.example.emailservice;
+package com.example.emailservice.domain.user.service;
 
+import com.example.emailservice.domain.user.model.User;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -16,7 +17,7 @@ public class UserService {
     
     RestTemplate restTemplate;
     
-    User getUserById(String id) {
+    public User getUserById(String id) {
         String url = String.format("http://localhost:8090/users/%s", id);
         return restTemplate.getForObject(url, User.class);
     }

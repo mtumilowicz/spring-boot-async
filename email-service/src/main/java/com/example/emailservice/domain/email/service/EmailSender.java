@@ -1,5 +1,6 @@
-package com.example.emailservice;
+package com.example.emailservice.domain.email.service;
 
+import com.example.emailservice.domain.user.model.User;
 import com.google.common.base.Preconditions;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

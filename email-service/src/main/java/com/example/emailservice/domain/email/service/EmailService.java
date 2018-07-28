@@ -1,5 +1,6 @@
-package com.example.emailservice;
+package com.example.emailservice.domain.email.service;
 
+import com.example.emailservice.domain.user.service.UserService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -31,7 +32,7 @@ public class EmailService {
                         "FAIL: Sending message " + message + " to " + login + " reason:" + t.getLocalizedMessage());
     }
     
-    String send(String login, String message) {
+    public String send(String login, String message) {
         log.info("Sending " + message + " to: " + login);
         try {
             return sender.send(userService.getUserById(login), message);
