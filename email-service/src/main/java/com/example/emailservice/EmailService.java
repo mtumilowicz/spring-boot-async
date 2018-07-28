@@ -19,7 +19,11 @@ public class EmailService {
     UserService userService;
 
     @Async
-    public CompletableFuture<String> send(Integer id, String message) {
-        return sender.send(userService.getUserById(id).join(), message);
+    public CompletableFuture<String> asyncSend(Integer id, String message) {
+        return CompletableFuture.completedFuture(sender.send(userService.getUserById(id), message));
+    }
+    
+    String send(Integer id, String message) {
+        return sender.send(userService.getUserById(id), message);
     }
 }

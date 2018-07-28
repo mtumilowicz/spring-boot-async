@@ -5,10 +5,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import lombok.experimental.FieldDefaults;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-
-import java.util.concurrent.CompletableFuture;
 
 import static java.util.Objects.nonNull;
 
@@ -20,11 +17,10 @@ import static java.util.Objects.nonNull;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class EmailSender {
     
-    @Async
-    public CompletableFuture<String> send(@NonNull User user, @NonNull String message) {
+    String send(@NonNull User user, @NonNull String message) {
         Preconditions.checkArgument(nonNull(user.getEmail()));
         
-        return CompletableFuture.completedFuture("email: " + message + " sent to: " + user.getEmail());
+        return "email: " + message + " sent to: " + user.getEmail();
     }
     
 }

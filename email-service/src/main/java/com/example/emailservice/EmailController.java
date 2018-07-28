@@ -24,13 +24,13 @@ import java.util.stream.Collectors;
 public class EmailController {
     EmailService emailService;
 
-    @GetMapping("{message}")
-    public ResponseEntity<List<String>> getById(@PathVariable("message") String message) {
+    @GetMapping("send/async/{message}")
+    public ResponseEntity<List<String>> asyncSend(@PathVariable("message") String message) {
         List<Integer> ids = Arrays.asList(1, 2, 3, 4);
         
         List<CompletableFuture<String>> completableFutures = ids
                 .stream()
-                .map(id -> emailService.send(id, message))
+                .map(id -> emailService.asyncSend(id, message))
                 .collect(Collectors.toList());
 
         CompletableFuture.allOf(completableFutures.toArray(new CompletableFuture[]{})).join();
@@ -38,6 +38,16 @@ public class EmailController {
         return ResponseEntity.ok(completableFutures
                 .stream()
                 .map(CompletableFuture::join)
+                .collect(Collectors.toList()));
+    }
+
+    @GetMapping("send/{message}")
+    public ResponseEntity<List<String>> getById(@PathVariable("message") String message) {
+        List<Integer> ids = Arrays.asList(1, 2, 3, 4);
+        
+        return ResponseEntity.ok(ids
+                .stream()
+                .map(id -> emailService.send(id, message))
                 .collect(Collectors.toList()));
     }
 
