@@ -42,7 +42,7 @@ public class EmailController {
     }
 
     @GetMapping("send/{message}")
-    public ResponseEntity<List<String>> getById(@PathVariable("message") String message) {
+    public ResponseEntity<List<String>> send(@PathVariable("message") String message) {
         List<Integer> ids = Arrays.asList(1, 2, 3, 4);
         
         return ResponseEntity.ok(ids
