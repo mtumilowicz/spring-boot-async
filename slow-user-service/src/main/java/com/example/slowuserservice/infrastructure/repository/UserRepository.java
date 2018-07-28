@@ -1,5 +1,8 @@
-package com.example.slowuserservice;
+package com.example.slowuserservice.infrastructure.repository;
 
+import com.example.slowuserservice.infrastructure.database.UsersDatabaseMock;
+import com.example.slowuserservice.domain.user.model.User;
+import com.example.slowuserservice.infrastructure.utils.ThreadUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +17,7 @@ public class UserRepository {
     @Value("${user.repository.delay.seconds}")
     private Integer delay;
     
-    Optional<User> getById(String id) {
+    public Optional<User> getById(String id) {
         ThreadUtils.sleep(delay);
         return Optional.ofNullable(UsersDatabaseMock.users.get(id));
     }

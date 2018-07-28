@@ -1,4 +1,4 @@
-package com.example.slowuserservice;
+package com.example.slowuserservice.domain.user.model;
 
 import lombok.Builder;
 import lombok.Value;
@@ -8,6 +8,7 @@ import lombok.Value;
  */
 @Value
 @Builder
+public
 class User {
     String login;
     String firstName;

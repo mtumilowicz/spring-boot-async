@@ -1,5 +1,7 @@
-package com.example.slowuserservice;
+package com.example.slowuserservice.rest.controller.user;
 
+import com.example.slowuserservice.domain.user.model.User;
+import com.example.slowuserservice.domain.user.service.UserService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;

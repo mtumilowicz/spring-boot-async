@@ -1,12 +1,13 @@
-package com.example.slowuserservice;
+package com.example.slowuserservice.infrastructure.database;
 
+import com.example.slowuserservice.domain.user.model.User;
 import com.google.common.collect.ImmutableMap;
 
 /**
  * Created by mtumilowicz on 2018-07-28.
  */
-class UsersDatabaseMock {
-    static final ImmutableMap<String, User> users = ImmutableMap.of(
+public class UsersDatabaseMock {
+    public static final ImmutableMap<String, User> users = ImmutableMap.of(
             "mtumilowicz",
             User.builder()
                     .firstName("Michal")
