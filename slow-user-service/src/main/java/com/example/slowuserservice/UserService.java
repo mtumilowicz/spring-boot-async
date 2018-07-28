@@ -1,6 +1,5 @@
 package com.example.slowuserservice;
 
-import com.google.common.collect.ImmutableCollection;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -18,9 +17,5 @@ public class UserService {
     
     User getById(Integer id) {
         return repository.getById(id).orElseThrow(() -> new UserNotFoundException(id));
-    }
-    
-    ImmutableCollection<User> findAll() {
-        return repository.findAll();
     }
 }

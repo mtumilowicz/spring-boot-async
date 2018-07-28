@@ -1,6 +1,6 @@
 package com.example.slowuserservice;
 
-import com.google.common.collect.ImmutableCollection;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -10,11 +10,12 @@ import java.util.Optional;
  */
 @Repository
 public class UserRepository {
-    Optional<User> getById(Integer id) {
-        return Optional.ofNullable(UsersMock.users.get(id));
-    }
 
-    ImmutableCollection<User> findAll() {
-        return UsersMock.users.values();
+    @Value("${user.repository.delay.seconds}")
+    private Integer delay;
+    
+    Optional<User> getById(Integer id) {
+        ThreadUtils.sleep(delay);
+        return Optional.ofNullable(UsersMock.users.get(id));
     }
 }

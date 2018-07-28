@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
-
 /**
  * Created by mtumilowicz on 2018-07-28.
  */
@@ -21,11 +19,6 @@ import java.util.Collection;
 public class UserController {
 
     UserService service;
-
-    @GetMapping
-    public ResponseEntity<Collection<User>> findAll() {
-        return ResponseEntity.ok(service.findAll());
-    }
     
     @GetMapping("{id}")
     public ResponseEntity<User> getById(@PathVariable("id") Integer id) {
