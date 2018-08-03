@@ -57,7 +57,7 @@ for the results using Java’s `CompletableFuture` interface.
     * `EmailController` - REST controller; receives `login-message` map,
     then asks `slow-user-service` for `emails` and sends messages
     * in `EmailService` we have the same methods:
-        * `@Async` method - `asyncSend`
+        * `@Async` method - `asyncSend` - concurrently sends messages
         * non-concurrent method - `send`
     * in `AppRunner` we simulate interactions and compare times
 * `slow-user-service`
