@@ -48,7 +48,7 @@ for the results using Java’s `CompletableFuture` interface.
     * `CompletableFuture.allOf(completableFutures.toArray(new CompletableFuture[]{})).join();`
     * `CompletableFuture.allOf(completableFuture1, completableFuture2).join();`
 
-1. Extract requested return:
+1. Extract requested return (note that `get()` throws checked exception):
     * `XXX xxx = completableFuture.join()`
 
 # project description
@@ -64,7 +64,7 @@ for the results using Java’s `CompletableFuture` interface.
     * `UserController` returns `User` bean (login, name, email...)
     for given login
     * in `UserRepository` we sleep thread for `user.repository.delay.seconds`
-    (configurable in `application.properties`)
+    (configurable in `application.properties`) and then return requested user
 
 # tests
 **Coverage**: `93%`
