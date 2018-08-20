@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/spring-boot-async.svg?branch=master)](https://travis-ci.com/mtumilowicz/spring-boot-async)
+
 # spring-boot-async
 The main goal of this project is to explore basic features of `@Async` 
 spring annotation and compare results with non-concurrent approach.
