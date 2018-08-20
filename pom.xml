@@ -7,6 +7,10 @@
     <groupId>spring-boot-async</groupId>
     <artifactId>spring-boot-async</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-
+    <modules>
+        <module>email-service</module>
+        <module>slow-user-service</module>
+    </modules>
 </project>
