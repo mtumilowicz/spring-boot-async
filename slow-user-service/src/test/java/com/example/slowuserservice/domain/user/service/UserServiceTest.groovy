@@ -12,12 +12,12 @@ class UserServiceTest extends Specification {
     def "test getById - found"() {
         given:
         def user = User.builder().build()
-        
+
         and:
         def userRepository = Mock(UserRepository) {
             getById("login") >> Optional.of(user)
         }
-        
+
         and:
         def service = new UserService(userRepository)
 
@@ -36,7 +36,7 @@ class UserServiceTest extends Specification {
 
         when:
         service.getById("login")
-        
+
         then:
         thrown(UserNotFoundException)
     }

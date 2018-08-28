@@ -28,12 +28,12 @@ public class EmailService {
     public CompletableFuture<String> asyncSend(@NonNull String login, @NonNull String message) {
         log.info("Sending " + message + " to: " + login);
         return CompletableFuture.supplyAsync(() -> sender.send(userService.getUserById(login), message))
-                .handle((s, t) -> nonNull(s) ?
-                        s :
+                .handle((ok, ex) -> nonNull(ok) ?
+                        ok :
                         String.format("FAIL: Sending email {%s} to %s reason: %s", 
                                 message, 
-                                login, 
-                                t.getLocalizedMessage()));
+                                login,
+                                ex.getLocalizedMessage()));
     }
 
     public String send(@NonNull String login, @NonNull String message) {
