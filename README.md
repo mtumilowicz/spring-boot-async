@@ -4,14 +4,24 @@
 The main goal of this project is to explore basic features of `@Async` 
 spring annotation and compare results with non-concurrent approach.
 
-_References_: https://spring.io/guides/gs/async-method/  
-_References_: http://www.baeldung.com/spring-async
+* references
+    * https://spring.io/guides/gs/async-method/  
+    * http://www.baeldung.com/spring-async
+    * [Concurrency in Spring Boot Applications: Making the Right Choice by Andrei Shakirin](https://www.youtube.com/watch?v=vhHDlSV_0zg)
 
 # preface
 This project shows how to create asynchronous queries using Spring.
 
 Our approach is to run expensive jobs in the background and wait 
 for the results using Java’s `CompletableFuture` interface.
+
+* spring boot concurrency options
+    * java executors and futures
+    * completable futures
+    * @Async annotation
+    * reactive programming
+    * virtual threads
+    * structured concurrency
 
 # manual
 1. Enable asynchronous support:
